@@ -1,0 +1,258 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+}
+
+.header-section {
+  background-color: #1a1919;
+  color: white;
+  height: 10%;
+  position: relative;
+  z-index: 5;
+}
+
+.main-container {
+  min-height: 100vh; /* make container at least full viewport height */
+  width: 100%;
+  overflow: auto; /* allow scrolling when content exceeds viewport */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+}
+
+.video-container {
+  position: relative;
+}
+
+.back-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  display: block;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background-color: rgba(48, 48, 48, 0.35);
+  pointer-events: none;
+}
+
+.hero {
+  position: relative;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  font-family: sans-serif;
+  width: 100%;
+  padding: 56px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.hero-company{
+  font-size:40px;
+  font-weight: lighter;
+}
+.hero-text{
+  font-size: 50px;
+  color:#fba45d;
+  font-weight: 600;
+}
+
+.cards-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  z-index: 2;
+  margin-top: 24px;
+}
+
+.button {
+  font-size: 16px;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  height: 50px;
+  font-weight: 500;
+  width: 300px;
+  background-color: #f5770f;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border: none;
+  box-shadow: 4px 4px 10px #000000;
+}
+
+
+
+.card1,
+.card2,
+.card3,
+.card4 {
+  background-color: #7fcbd8;
+  flex: 0 1 290px;
+  max-width: 100%;
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.card-title {
+  display: flex;
+}
+
+.card-title img {
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+  display: block;
+  padding: 10px;
+}
+
+.card-footer {
+  position: relative;
+  margin-top: auto;
+
+  box-sizing: border-box;
+  padding: 12px;
+  height: auto;
+  display: flex;
+  background: #fff;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  gap: 2px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-footer h6{
+    font-size: 16px;
+    font-weight:bold;
+    color:rgb(55, 61, 72);
+    margin:0;padding-bottom: 4px;
+}
+
+.card-footer h2{
+font-size: 12px;
+font-weight: lighter;
+margin:0"
+}
+
+
+
+
+
+
+.right-side-links a {
+  text-decoration: none;
+  color: white;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100px;
+  height: 40px;
+
+  border-radius: 12px;
+}
+
+.right-side-links a:hover{
+  background-color: #f5770f;
+  
+ 
+ 
+}
+.nav-bar-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.right-side-links {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  color: white;
+  font-size: 16px;
+  padding-right: 60px;
+
+  font-weight: lighter;
+}
+
+.header-section > nav {
+  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    position: relative;
+    margin: 16px auto;
+    width: calc(100% - 40px);
+    max-width: 1100px;
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  .cards-container {
+    padding-left: 24px;
+    padding-right: 24px;
+    gap: 20px;
+  }
+
+  .card1,
+  .card2,
+  .card3,
+  .card4 {
+    flex: 1 1 45%;
+    /* two cards per row */
+    max-width: 48%;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    font-size: 20px;
+    height: auto;
+    padding: 14px;
+  }
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+  }
+  .card1,
+  .card2,
+  .card3,
+  .card4 {
+    flex: 1 1 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+  .card-title img {
+    height: auto;
+  } /* let image scale vertically */
+  .card-footer {
+    width: calc(100% - 24px);
+    padding: 12px;
+  }
+}

@@ -1,75 +1,27 @@
 html,
 body {
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   margin: 0;
- font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  /* overflow: hidden; */
 }
 
 .header-section {
-  background-color: #ffa65d;
+  background-color: #000000;
   color: white;
   height: 10%;
 }
 
 .main-container {
-  height: 90%;
+  min-height: 100vh;
   width: 100%;
-  overflow: hidden;
-}
-
-.video-container video {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(48, 48, 48);
-  mix-blend-mode: overlay;
- 
-}
-
-.cards-container {
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 32px;
-  padding-right: 70px;
-  padding-left: 90px;
-
-  bottom: 20px;
-}
-.button {
-  font-size: 16px;
-  color: white;
-  padding: 20px;
-  border-radius: 8px;
-  height: 50px;
-  font-weight: 500;
-  width: 300px;
-  background-color: #ffa65d;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  border: none;
-
-  box-shadow: 4px 4px 10px #9f5200;
-  /* box-shadow: 1px 2px 5px #ffffff;  */
+  background-color: #2c2929;
+  /* overflow: hidden; */
 }
 
 .hero {
-  /* background-color: rgba(71, 71, 71, 0.6); */
-
-  position: absolute;
+  position: relative;
   color: white;
   font-size: 50px;
   font-weight: bold;
@@ -82,94 +34,72 @@ body {
   justify-content: center;
 }
 
-
-
-.card1 {
-  /* background-color: #dffea4; */
-  background-color: #7fcbd8;
-  height: 270px;
-  width: 290px;
-  border-radius: 20px;
-  align-items: center;
+.cards-container {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* push first child to top and last child to bottom */
-  padding: 15px 0; /* top and bottom spacing */
-  margin-bottom: 0px;
+  flex-direction: row;
+  justify-content: center;
+  gap: 32px;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.card1,
+.card2,
+.card3,
+.card4 {
+  background-color: #7fcbd8;
+  box-sizing: border-box;
+  flex: 0 1 290px;
+  max-width: 100%;
+  margin: 0;
+  border-radius: 22px;
 }
 
 .card-title {
   display: flex;
-  margin-bottom: 12px;
 }
 
 .card-title img {
-  /* max-width: 100%;
-  max-height: 100%; */
   height: 160px;
-  width: 270px;
-  border-radius: 20px;
-
-  /* object-fit: contain; */
+  width: 100%;
+  display: block;
+  border-radius: 22px;
+  object-fit: cover;
+  padding: 10px;
 }
-
-
 
 .card-footer {
+  position: relative;
+  box-sizing: border-box;
   display: flex;
-  bottom: 0;
   flex-direction: column;
-  position: absolute;
-  height: 70px;
-  width: 290px;
-  padding-top: 8px;
-  padding-left: 18px;
+  background: #fff;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 12px;
+  gap: 2px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 
 }
 
-
-
-.card2 {
-  background-color: #7fcbd8;
-
-  height: 270px;
-  width: 290px;
-  border-radius: 20px;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* push first child to top and last child to bottom */
-  padding: 15px 0; /* top and bottom spacing */
-  margin-bottom: 0px;
+.card-footer h6 {
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(55, 61, 72);
+  margin: 0;
+  padding-bottom: 4px;
 }
 
-.card3 {
-  background-color: #7fcbd8;
-  height: 270px;
-  width: 290px;
-  border-radius: 20px;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* push first child to top and last child to bottom */
-  padding: 15px 0; /* top and bottom spacing */
-  margin-bottom: 0px;
-}
-.card4 {
-  background-color: #7fcbd8;
-  height: 270px;
-  width: 290px;
-  border-radius: 12px;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* push first child to top and last child to bottom */
-  padding: 15px 0; /* top and bottom spacing */
-  margin-bottom: 0px;
+.card-footer h2 {
+  font-size: 12px;
+  font-weight: lighter;
+  margin: 0;
 }
 
 .right-side-links a {
-   text-decoration: none;
+  text-decoration: none;
   color: white;
   display: flex;
   justify-content: center;
@@ -182,11 +112,8 @@ body {
   transition: background-color 0.3s;
 }
 
-.right-side-links a:hover{
+.right-side-links a:hover {
   background-color: #000000;
-  
- 
- 
 }
 .nav-bar-top {
   display: flex;
@@ -209,3 +136,183 @@ body {
   align-items: center;
   text-align: center;
 }
+
+
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.18);
+}
+
+.hero h6 {
+  color: #ff873c; /* deeper orange for better contrast */
+  font-weight: 700;
+  font-size: 42px;
+}
+
+.button {
+  font-size: 16px;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  height: 50px;
+  font-weight: 500;
+  width: 300px;
+  background-color: #ff7300;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  border: none;
+}
+
+
+/* Courses section: clearer contrast and crisper text rendering */
+.courses-section {
+  width: 100%;
+  height: 100vh;
+  background-color: #0c0c0c;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+ 
+}
+
+.courses-title {
+  font-size: 70px;
+  font-weight: 800;
+  color: #ffffff;
+  padding: 28px 0;
+  margin: 0;
+  
+}
+
+.courses-title p {
+  margin: 0;
+}
+
+.students-list{
+    width: 100%;
+  height: 100vh;
+  background-color: #0c0c0c;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap:0;
+}
+
+.students{
+  font-size: 50px;
+  font-weight: 800;
+  color: #ffffff;
+  padding: 28px 0;
+  margin: 0;
+  
+}
+
+.student-card{
+  height:200px;
+  width:170px;
+  background-color: blueviolet;
+}
+
+.student-profile{
+  display:flex;flex-direction:row;justify-content:flex-end;gap:24px;width:100%;justify-content: center;align-items: center;
+}
+
+
+
+.profile1, .profile2, .profile3, .profile4{
+height:200px;
+width:300px;
+background-color:#ffffff;
+border-radius: 12px;
+display:flex;
+justify-content:flex-start;
+padding:20px 60px;
+flex-direction: column;
+
+
+
+
+
+}
+
+
+.course-card1 ,.course-card2, .course-card3, .course-card4{
+  height:200px;
+  width:90%;
+  border:1px solid white;
+  margin:14px;border-radius: 12px;
+  background-color: blueviolet;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 12px;
+  border-radius: 20px;
+}
+
+.course-view-button{
+  height:35px;width:120px;
+  background-color: white;
+  color:darkorange;
+  border:none;
+  font-weight: 900;
+  border-radius: 8px;
+  margin-left: 60px;
+}
+
+.connect-button{
+   height:35px;width:120px;
+  background-color:darkorange;
+  color:rgb(255, 255, 255);
+  border:none;
+  font-weight: 900;
+  border-radius: 8px;
+  margin-left: 60px;
+}
+
+.card-profile {
+  display: flex;
+  flex-direction: column;
+
+             
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;  
+  justify-content: center;
+  text-align: center;
+  padding-top: 12px;
+  
+
+  gap: 6px;            
+}
+
+.connect-button {
+
+  border-radius: 6px;
+  border: none;
+  background-color: orange;
+  color: white;
+  cursor: pointer;
+  align-items: center;
+  margin-left: 2px;
+
+}
+
+.footer{
+  width:100%; height:300px;
+  background-color:rgb(255, 152, 26);
+  padding-left: 32px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
